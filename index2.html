@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Foundations - Home</title>
   <style>
-    /* DOS-style retro look */
+    /* DOS-style retro look with mobile-friendly enhancements */
     body {
       background-color: #000;
       color: #0f0;
@@ -13,18 +13,45 @@
       margin: 0;
       padding: 0;
     }
-    a { color: #0f0; text-decoration: none; }
-    .link { color: #0f0; }
-    pre { margin: 0; padding: 20px; }
+    .container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    pre {
+      margin: 0;
+      padding: 20px;
+      white-space: pre;
+    }
+    a {
+      color: #0f0;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff;
+    }
+    .button {
+      background-color: #0f0;
+      color: #000;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 4px;
+      margin: 0;
+    }
+    .button:hover {
+      background-color: #fff;
+      color: #000;
+    }
   </style>
 </head>
 <body>
+<div class="container">
 <pre>
 +------------------------------------------------------------------------------+
 | MS DOS COOL PAGE                                                             |
 +------------------------------------------------------------------------------+
-| [0] <A HREF="/">Home</A>           [1] <A HREF="/year1">Year 1</A>      [2] <A HREF="/year2">Year 2</A>    |
-| [3] <A HREF="/resources">Resources</A>  [4] <A HREF="/calendar">Calendar</A> [5] <A HREF="/about">About</A> [6] <A HREF="/showcase">Showcase</A> |
+| [0] <a href="/" class="button">Home</a>           [1] <a href="/year1" class="button">Year 1</a>      [2] <a href="/year2" class="button">Year 2</a>    |
+| [3] <a href="/resources" class="button">Resources</a>  [4] <a href="/calendar" class="button">Calendar</a> [5] <a href="/about" class="button">About</a> [6] <a href="/showcase" class="button">Showcase</a> |
 +----------------------+  +----------------------------------------------------+
 | [ Main Menu ]        |  | [ C:\ENG\HOME\ ]                                  |
 |                      |  |                                                    |
@@ -45,10 +72,11 @@
 |   Tue & Thu 3:00-4:00 PM (Room B12)  | Email: dciuca@ccsd.net                |
 |   Slack: @MsCiuca_ENG                                                      |
 |                                                                              |
-| + Syllabus: <A HREF="/syllabus/Engineering_Syllabus.pdf">Download PDF</A>    |
+| + Syllabus: <a href="/syllabus/Engineering_Syllabus.pdf" class="button">Download PDF</a>    |
 +------------------------------------------------------------------------------+
 |                    [ Created © 2024 for HamsterCMS ]                         |
 +------------------------------------------------------------------------------+
 </pre>
+</div>
 </body>
 </html>
