@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Foundations - Year 1</title>
+  <style>
+    /* DOS-style retro look centered */
+    body { background-color: #000; color: #0f0; font-family: 'Lucida Console', Monaco, monospace; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    .container { margin: 20px; max-width: 90%; overflow-x: auto; }
+    pre { margin: 0; padding: 20px; white-space: pre; }
+    a { color: #0f0; text-decoration: none; }
+    .button { background-color: #0f0; color: #000; text-decoration: none; display: inline-block; padding: 0 4px; }
+    a:hover { color: #fff; }
+    .button:hover { background-color: #fff; color: #000; }
+    #cmdArea { margin-bottom: 20px; }
+    #command { background-color: #000; color: #0f0; border: 1px solid #0f0; font-family: 'Lucida Console', Monaco, monospace; width: 3em; padding: 2px; margin-left: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+<pre>
++------------------------------------------------------------------------------+
+| MS DOS COOL PAGE                                                             |
++------------------------------------------------------------------------------+
+| [0] <a href="/" class="button">Home</a>       [1] <a href="/year1" class="button">Year 1</a>    [2] <a href="/year2" class="button">Year 2</a>    |
+| [3] <a href="/resources" class="button">Resources</a> [4] <a href="/calendar" class="button">Calendar</a> [5] <a href="/about" class="button">About</a> [6] <a href="/showcase" class="button">Showcase</a> |
++----------------------+  +----------------------------------------------------+
+| [ Main Menu ]        |  | [ C:\ENG\YEAR1\ ]                                 |
+|                      |  |                                                    |
+| 0 Home               |  | Year 1 Engineering                                 |
+| 1 Year 1             |  |                                                    |
+| 2 Year 2             |  |   - Quarter 1: Foundations & Safety                |
+| 3 Resources          |  |   - Quarter 2: Design Process & Sketching         |
+| 4 Calendar           |  |   - Quarter 3: Simple Machines & Advantage        |
+| 5 About              |  |   - Quarter 4: Documentation & Capstone Prep      |
+| 6 Showcase           |  |                                                    |
++----------------------+  +----------------------------------------------------+
+| Select a quarter number to view details:                                     |
+|   [7] Q1  [8] Q2  [9] Q3  [0] Q4                                              |
++------------------------------------------------------------------------------+
+|                    [ Created © 2024 for HamsterCMS ]                         |
++------------------------------------------------------------------------------+
+</pre>
+  </div>
+  <div id="cmdArea">
+    Enter command:<input type="text" id="command" maxlength="1" autofocus>
+  </div>
+  <script>
+    document.getElementById('command').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const cmd = this.value.trim();
+        const routes = {
+          '0': '/', '1': '/year1', '2': '/year2', '3': '/resources', '4': '/calendar', '5': '/about', '6': '/showcase',
+          '7': '/year1/q1', '8': '/year1/q2', '9': '/year1/q3'
+        };
+        if (routes[cmd]) window.location.href = routes[cmd];
+        if (cmd === '0') window.location.href = '/year1/q4';
+      }
+    });
+  </script>
+</body>
+</html>
