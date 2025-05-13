@@ -14,7 +14,7 @@
     a:hover { color: #fff; }
     .button:hover { background-color: #fff; color: #000; }
     #cmdArea { margin-bottom: 20px; }
-    #command { background-color: #000; color: #0f0; border: 1px solid #0f0; font-family: 'Lucida Console', Monaco, monospace; width: 3em; padding: 2px; margin-left: 4px; }
+    #command { background-color: #000; color: #0f0; border: 1px solid #0f0; font-family: 'Lucida Console', Monaco, monospace; width: 4em; padding: 2px; margin-left: 4px; text-transform: uppercase; }
   </style>
 </head>
 <body>
@@ -26,7 +26,7 @@
 | [00] <a href="/" class="button">Home</a> [01] <a href="/year1" class="button">Year 1</a> [02] <a href="/year2" class="button">Year 2</a>  |
 | [03] <a href="/resources" class="button">Resources</a> [04] <a href="/calendar" class="button">Calendar</a> [05] <a href="/about" class="button">About</a> [06] <a href="/showcase" class="button">Showcase</a> |
 +----------------------+  +----------------------------------------------------+
-| [ Year 1 Menu ]      |  | [ C:\ENG\YEAR1\Q1\ ]                              |
+| [ Year 1 Menu ]      |  | [ C:\ENG\YEAR1\Q1\ ]                               |
 |                      |  |                                                    |
 | 11 Q1                |  | Quarter 1: Foundations & Safety                    |
 | 12 Q2                |  |                                                    |
@@ -37,38 +37,44 @@
 |                      |  | • Resources & downloads: PPE guide, safety videos  |
 |                      |  |                                                    |
 |                      |  | + Days:                                            |
-|                      |  |   [ D01 ] [ D02 ] [ D03 ] [ D04 ] [ D05 ]           |
-|                      |  |   [ D06 ] [ D07 ] [ D08 ] [ D09 ] [ D10 ]           |
-|                      |  |   [ D11 ] [ D12 ] [ D13 ] [ D14 ] [ D15 ]           |
-|                      |  |   [ D16 ] [ D17 ] [ D18 ] [ D19 ] [ D20 ]           |
-|                      |  |   [ D21 ] [ D22 ]                                  |
+|                      |  |   [ D01 ] [ D02 ] [ D03 ] [ D04 ] [ D05 ] [ D06 ]  |
+|                      |  |   [ D07 ] [ D08 ] [ D09 ] [ D10 ] [ D11 ] [ D12 ]  |
+|                      |  |   [ D13 ] [ D14 ] [ D15 ] [ D16 ] [ D17 ] [ D18 ]  |
+|                      |  |   [ D19 ] [ D20 ] [ D21 ] [ D22 ]                  |
 |                      |  |                                                    |
-|                      |  | + Summatives:                                     |
-|                      |  |   [ S1 ] [ S2 ] [ S3 ] [ S4 ] [ S5 ] [ S6 ]         |
-|                      |  |   [ S7 ] [ S8 ]                                    |
+|                      |  | + Summatives:                                      |
+|                      |  |   [ S1 ] [ S2 ] [ S3 ] [ S4 ] [ S5 ] [ S6 ] [ S7 ] |
+|                      |  |   [ S8 ]                                           |
 |                      |  |                                                    |
-|                      |  | + Formatives:                                     |
-|                      |  |   [ F1 ] [ F2 ] [ F3 ] [ F4 ] [ F5 ] [ F6 ]         |
-|                      |  |   [ F7 ] [ F8 ]                                    |
+|                      |  | + Formatives:                                      |
+|                      |  |   [ F1 ] [ F2 ] [ F3 ] [ F4 ] [ F5 ] [ F6 ] [ F7 ] |
+|                      |  |   [ F8 ]                                           |
 +----------------------+  +----------------------------------------------------+
-| Select code: [00-06] or [11-14]                                             |
+| Select code: [00-06], [11-14], [D01-D22], [S1-S8], [F1-F8]                   |
 +------------------------------------------------------------------------------+
 |                    [ Created © 2024 for Diana Ciuca ]                        |
 +------------------------------------------------------------------------------+
 </pre>
   </div>
   <div id="cmdArea">
-    Enter code:<input type="text" id="command" maxlength="2" autofocus>
+    Enter code:<input type="text" id="command" maxlength="3" autofocus>
   </div>
   <script>
     document.getElementById('command').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
-        const cmd = this.value.trim();
+        const cmd = this.value.trim().toUpperCase();
         const routes = {
           '00':'/', '01':'/year1', '02':'/year2', '03':'/resources', '04':'/calendar', '05':'/about', '06':'/showcase',
-          '11':'/year1/q1', '12':'/year1/q2', '13':'/year1/q3', '14':'/year1/q4'
+          '11':'/year1/q1', '12':'/year1/q2', '13':'/year1/q3', '14':'/year1/q4',
+          'D01':'/year1/q1/d01','D02':'/year1/q1/d02','D03':'/year1/q1/d03','D04':'/year1/q1/d04','D05':'/year1/q1/d05',
+          'D06':'/year1/q1/d06','D07':'/year1/q1/d07','D08':'/year1/q1/d08','D09':'/year1/q1/d09','D10':'/year1/q1/d10',
+          'D11':'/year1/q1/d11','D12':'/year1/q1/d12','D13':'/year1/q1/d13','D14':'/year1/q1/d14','D15':'/year1/q1/d15',
+          'D16':'/year1/q1/d16','D17':'/year1/q1/d17','D18':'/year1/q1/d18','D19':'/year1/q1/d19','D20':'/year1/q1/d20',
+          'D21':'/year1/q1/d21','D22':'/year1/q1/d22',
+          'S1':'/year1/q1/s1','S2':'/year1/q1/s2','S3':'/year1/q1/s3','S4':'/year1/q1/s4','S5':'/year1/q1/s5','S6':'/year1/q1/s6','S7':'/year1/q1/s7','S8':'/year1/q1/s8',
+          'F1':'/year1/q1/f1','F2':'/year1/q1/f2','F3':'/year1/q1/f3','F4':'/year1/q1/f4','F5':'/year1/q1/f5','F6':'/year1/q1/f6','F7':'/year1/q1/f7','F8':'/year1/q1/f8'
         };
-        if(routes[cmd]) window.location.href = routes[cmd];
+        if (routes[cmd]) { window.location.href = routes[cmd]; }
       }
     });
   </script>
