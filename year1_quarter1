@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Foundations - Year 1 Q1</title>
+  <style>
+    /* DOS-style retro look centered */
+    body { background-color: #000; color: #0f0; font-family: 'Lucida Console', Monaco, monospace; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    .container { margin: 20px; max-width: 90%; overflow-x: auto; }
+    pre { margin: 0; padding: 20px; white-space: pre; }
+    a { color: #0f0; text-decoration: none; }
+    .button { background-color: #0f0; color: #000; text-decoration: none; display: inline-block; padding: 0 4px; }
+    a:hover { color: #fff; }
+    .button:hover { background-color: #fff; color: #000; }
+    #cmdArea { margin-bottom: 20px; }
+    #command { background-color: #000; color: #0f0; border: 1px solid #0f0; font-family: 'Lucida Console', Monaco, monospace; width: 3em; padding: 2px; margin-left: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+<pre>
++------------------------------------------------------------------------------+
+| MS DOS COOL PAGE - Q1 DETAILS                                                |
++------------------------------------------------------------------------------+
+| [00] <a href="/" class="button">Home</a> [01] <a href="/year1" class="button">Year 1</a> [02] <a href="/year2" class="button">Year 2</a>  |
+| [03] <a href="/resources" class="button">Resources</a> [04] <a href="/calendar" class="button">Calendar</a> [05] <a href="/about" class="button">About</a> [06] <a href="/showcase" class="button">Showcase</a> |
++----------------------+  +----------------------------------------------------+
+| [ Year 1 Menu ]      |  | [ C:\ENG\YEAR1\Q1\ ]                              |
+|                      |  |                                                    |
+| 11 Q1                |  | Quarter 1: Foundations & Safety                    |
+| 12 Q2                |  | • Course intro & CTSO overview (Standard 1.0)      |
+| 13 Q3                |  | • Lab organization & safety protocols (Std 2.0)    |
+| 14 Q4                |  | • Mini-lab: shop safety scavenger hunt             |
+|                      |  | • Formative: safety checklist quiz                 |
+|                      |  | • Resources & downloads: PPE guide, safety videos  |
+|                      |  |                                                    |
+|                      |  | + Days:                                            |
+|                      |  |   - D01                                           |
+|                      |  |   - D02                                           |
+|                      |  |   - D03                                           |
+|                      |  |   - D04                                           |
+|                      |  |   - D05                                           |
+|                      |  |   - D06                                           |
+|                      |  |   - D07                                           |
+|                      |  |   - D08                                           |
+|                      |  |   - D09                                           |
+|                      |  |   - D10                                           |
+|                      |  |   - D11                                           |
+|                      |  |   - D12                                           |
+|                      |  |   - D13                                           |
+|                      |  |   - D14                                           |
+|                      |  |   - D15                                           |
+|                      |  |   - D16                                           |
+|                      |  |   - D17                                           |
+|                      |  |   - D18                                           |
+|                      |  |   - D19                                           |
+|                      |  |   - D20                                           |
+|                      |  |   - D21                                           |
+|                      |  |   - D22                                           |
+|                      |  |                                                    |
+|                      |  | + Summatives: S1 S2 S3 S4 S5 S6 S7 S8              |
+|                      |  | + Formatives: F1 F2 F3 F4 F5 F6 F7 F8              |
++----------------------+  +----------------------------------------------------+
+| Select code: [00-06] or [11-14]                                             |
++------------------------------------------------------------------------------+
+|                    [ Created © 2024 for Diana Ciuca ]                        |
++------------------------------------------------------------------------------+
+</pre>
+  </div>
+  <div id="cmdArea">
+    Enter code:<input type="text" id="command" maxlength="2" autofocus>
+  </div>
+  <script>
+    document.getElementById('command').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const cmd = this.value.trim();
+        const routes = {
+          '00':'/', '01':'/year1', '02':'/year2', '03':'/resources', '04':'/calendar', '05':'/about', '06':'/showcase',
+          '11':'/year1/q1', '12':'/year1/q2', '13':'/year1/q3', '14':'/year1/q4'
+        };
+        if(routes[cmd]) window.location.href = routes[cmd];
+      }
+    });
+  </script>
+</body>
+</html>
