@@ -23,39 +23,40 @@
 +------------------------------------------------------------------------------+
 | MS DOS COOL PAGE                                                             |
 +------------------------------------------------------------------------------+
-| [0] <a href="/" class="button">Home</a>       [1] <a href="/year1" class="button">Year 1</a>    [2] <a href="/year2" class="button">Year 2</a>    |
-| [3] <a href="/resources" class="button">Resources</a> [4] <a href="/calendar" class="button">Calendar</a> [5] <a href="/about" class="button">About</a> [6] <a href="/showcase" class="button">Showcase</a> |
+| [00] <a href="/" class="button">Home</a>    [01] <a href="/year1" class="button">Year 1</a>    [02] <a href="/year2" class="button">Year 2</a>    |
+| [03] <a href="/resources" class="button">Resources</a> [04] <a href="/calendar" class="button">Calendar</a> [05] <a href="/about" class="button">About</a> [06] <a href="/showcase" class="button">Showcase</a> |
 +----------------------+  +----------------------------------------------------+
 | [ Main Menu ]        |  | [ C:\ENG\YEAR1\ ]                                 |
 |                      |  |                                                    |
-| 0 Home               |  | Year 1 Engineering                                 |
-| 1 Year 1             |  |                                                    |
-| 2 Year 2             |  |   - Quarter 1: Foundations & Safety                |
-| 3 Resources          |  |   - Quarter 2: Design Process & Sketching         |
-| 4 Calendar           |  |   - Quarter 3: Simple Machines & Advantage        |
-| 5 About              |  |   - Quarter 4: Documentation & Capstone Prep      |
-| 6 Showcase           |  |                                                    |
+| 00 Home              |  | Year 1 Engineering                                 |
+| 01 Year 1            |  |                                                    |
+| 02 Year 2            |  |   - Quarter 1: Foundations & Safety                |
+| 03 Resources         |  |   - Quarter 2: Design Process & Sketching         |
+| 04 Calendar          |  |   - Quarter 3: Simple Machines & Advantage        |
+| 05 About             |  |   - Quarter 4: Documentation & Capstone Prep      |
+| 06 Showcase          |  |                                                    |
 +----------------------+  +----------------------------------------------------+
-| Select a quarter number to view details:                                     |
-|   [7] Q1  [8] Q2  [9] Q3  [0] Q4                                              |
+| Select a code to navigate:                                                 |
+|   [11] Q1  [12] Q2  [13] Q3  [14] Q4                                         |
 +------------------------------------------------------------------------------+
-|                    [ Created © 2024 for Diana Ciuca ]                         |
+|                    [ Created © 2024 for Diana Ciuca ]                        |
 +------------------------------------------------------------------------------+
 </pre>
   </div>
   <div id="cmdArea">
-    Enter command:<input type="text" id="command" maxlength="1" autofocus>
+    Enter code:<input type="text" id="command" maxlength="2" autofocus>
   </div>
   <script>
     document.getElementById('command').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         const cmd = this.value.trim();
         const routes = {
-          '0': '/', '1': '/year1', '2': '/year2', '3': '/resources', '4': '/calendar', '5': '/about', '6': '/showcase',
-          '7': '/year1/q1', '8': '/year1/q2', '9': '/year1/q3'
+          '00': '/', '01': '/year1', '02': '/year2', '03': '/resources', '04': '/calendar', '05': '/about', '06': '/showcase',
+          '11': '/year1/q1', '12': '/year1/q2', '13': '/year1/q3', '14': '/year1/q4'
         };
-        if (routes[cmd]) window.location.href = routes[cmd];
-        if (cmd === '0') window.location.href = '/year1/q4';
+        if (routes[cmd]) {
+          window.location.href = routes[cmd];
+        }
       }
     });
   </script>
