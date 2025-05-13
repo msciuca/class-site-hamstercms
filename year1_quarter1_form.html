@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Foundations - Year 1 Q1 Formatives</title>
+  <style>
+    /* DOS-style retro look centered */
+    body { background-color: #000; color: #0f0; font-family: 'Lucida Console', Monaco, monospace; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    .container { margin: 20px; max-width: 90%; overflow-x: auto; }
+    pre { margin: 0; padding: 20px; white-space: pre; }
+    a { color: #0f0; text-decoration: none; }
+    .button { background-color: #0f0; color: #000; text-decoration: none; display: inline-block; padding: 0 4px; }
+    a:hover { color: #fff; }
+    .button:hover { background-color: #fff; color: #000; }
+    #cmdArea { margin-bottom: 20px; }
+    #command { background-color: #000; color: #0f0; border: 1px solid #0f0; font-family: 'Lucida Console', Monaco, monospace; width: 5em; padding: 2px; margin-left: 4px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="container">
+<pre>
++------------------------------------------------------------------------------+
+| MS DOS COOL PAGE - Q1 FORMATIVES                                             |
++------------------------------------------------------------------------------+
+| [00] <a href="/" class="button">Home</a> [01] <a href="/year1" class="button">Year 1</a> [02] <a href="/year2" class="button">Year 2</a>  |
+| [03] <a href="/resources" class="button">Resources</a> [04] <a href="/calendar" class="button">Calendar</a> [05] <a href="/about" class="button">About</a> [06] <a href="/showcase" class="button">Showcase</a> |
++------------------------------------------------------------------------------+
+| [ Q1 Menu ]         [ C:\ENG\YEAR1\Q1\FORMATIVES ]                          |
+|                                                                              |
+|   [ F1 ] Course intro & safety check - quiz                                  |
+|   [ F2 ] Bridge design principles essay (SLG)                                |
+|   [ F3 ] Multiview + isometric intro - quiz                                  |
+|   [ F4 ] Multiview + isometric identify - quiz 2                              |
+|   [ F5 ] Fraction‑decimal quiz                                               |
+|   [ F6 ] Measurements and tools quiz                                         |
+|   [ F7 ] CAD vocab quiz                                                      |
+|   [ F8 ] Extrude/fillet/chamfer demonstration sketch                          |
+|   [ F9 ] PPE label identification                                            |
+|   [F10 ] Sketch a simple tool (freehand)                                     |
+|   [F11 ] EDP steps matching                                                  |
+|   [F12 ] Caliper measurement drill                                           |
+|   [F13 ] Simple machine example identification                               |
+|   [F14 ] Dimensioning symbols quiz                                           |
+|   [F15 ] Safety contract worksheet                                           |
+|   [F16 ] Measurement worksheet                                               |
++------------------------------------------------------------------------------+
+| Select code: [00-06], [11-14], [F1-F16]                                      |
++------------------------------------------------------------------------------+
+|                    [ Created © 2024 for Diana Ciuca ]                        |
++------------------------------------------------------------------------------+
+</pre>
+  </div>
+  <div id="cmdArea">
+    Enter code:<input type="text" id="command" maxlength="3" autofocus>
+  </div>
+  <script>
+    document.getElementById('command').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const cmd = this.value.trim().toUpperCase();
+        const routes = {
+          '00':'/', '01':'/year1', '02':'/year2', '03':'/resources', '04':'/calendar', '05':'/about', '06':'/showcase',
+          '11':'/year1/q1','12':'/year1/q2','13':'/year1/q3','14':'/year1/q4',
+          'F1':'/year1/q1/f1','F2':'/year1/q1/f2','F3':'/year1/q1/f3','F4':'/year1/q1/f4','F5':'/year1/q1/f5','F6':'/year1/q1/f6','F7':'/year1/q1/f7','F8':'/year1/q1/f8',
+          'F9':'/year1/q1/f9','F10':'/year1/q1/f10','F11':'/year1/q1/f11','F12':'/year1/q1/f12','F13':'/year1/q1/f13','F14':'/year1/q1/f14','F15':'/year1/q1/f15','F16':'/year1/q1/f16'
+        };
+        if (routes[cmd]) window.location.href = routes[cmd];
+      }
+    });
+  </script>
+</body>
+</html>
