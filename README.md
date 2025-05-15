@@ -1,6 +1,10 @@
 # class-site-hamstercms
 Retro UI
+# Class Website Structure
 
+Here's how the repo is organized:
+
+```text
 /
 ├── index.html             ← Home page
 ├── resources.html         ← /resources.html
@@ -36,7 +40,3 @@ Retro UI
     │   ├── index.html
     │   └── s1.html, s2.html, … 
     └── quarter2/…  
-
-
-
-
