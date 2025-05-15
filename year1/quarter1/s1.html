@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Year 1 Q1 S1 – About Me slideshow</title>
+  <style>
+    /* DOS-style retro look centered */
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Lucida Console', Monaco, monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      margin: 20px;
+      max-width: 90%;
+      overflow-x: auto;
+    }
+    pre {
+      margin: 0;
+      padding: 20px;
+      white-space: pre;
+    }
+    a {
+      color: #0f0;
+      text-decoration: none;
+    }
+    .button {
+      background-color: #0f0;
+      color: #000;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 4px;
+    }
+    a:hover { color: #fff; }
+    .button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    #cmdArea { margin-bottom: 20px; }
+    #command {
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+      font-family: 'Lucida Console', Monaco, monospace;
+      width: 6em;
+      padding: 2px;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+<pre>
++------------------------------------------------------------------------------+
+| MS DOS COOL PAGE • S1 About Me slideshow                                      |
++------------------------------------------------------------------------------+
+| Welcome to your first summative!                                              |
+|                                                                              |
+| Instructions:                                                                |
+|   • Create a 5–7 slide slideshow introducing yourself.                      |
+|   • Include: background, interests, career goals, and one fun fact.         |
+|   • Use PowerPoint, Slides, or PDF export.                                   |
+|                                                                              |
+| Submission:                                                                  |
+|   • Upload your .pptx or .pdf file to Canvas under “Q1 Summatives → S1.”    |
+|                                                                              |
+| Resources:                                                                   |
+|   • Tutorial: “How to build a slideshow” (on Resources page)                 |
+|   • Rubric: 10 pts content, 5 pts design, 5 pts clarity                      |
++------------------------------------------------------------------------------+
+| [← Back to Q1 menu]      [ Home ]                                            |
+|                     (enter “Y1Q1” or “Y1Q1S1”)                               |
++------------------------------------------------------------------------------+
+|                    [ Created © 2024 for Diana Ciuca ]                        |
++------------------------------------------------------------------------------+
+</pre>
+  </div>
+
+  <div id="cmdArea">
+    Enter code:<input type="text" id="command" maxlength="8" autofocus>
+  </div>
+
+  <script>
+    document.getElementById('command').addEventListener('keydown', function(e) {
+      if (e.key !== 'Enter') return;
+      const cmd = this.value.trim().toUpperCase();
+
+      // Quick top-level pages
+      const pages = {
+        '00':'index.html',
+        '01':'year1.html',
+        '02':'year2.html',
+        '03':'resources.html',
+        '04':'calendar.html',
+        '05':'about.html',
+        '06':'showcase.html'
+      };
+      if (pages[cmd]) {
+        window.location.href = pages[cmd];
+        return;
+      }
+
+      // Summative: Y{year}Q{quarter}S{summative}
+      let m = cmd.match(/^Y([12])Q([1-4])S([1-9])$/);
+      if (m) {
+        const [, y, q, s] = m;
+        window.location.href = `year${y}/quarter${q}/s${s}.html`;
+        return;
+      }
+
+      // Quarter: Y{year}Q{quarter}
+      m = cmd.match(/^Y([12])Q([1-4])$/);
+      if (m) {
+        const [, y, q] = m;
+        window.location.href = `year${y}/quarter${q}/index.html`;
+      }
+    });
+  </script>
+</body>
+</html>
