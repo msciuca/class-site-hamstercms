@@ -34,8 +34,8 @@
 |   [ S4 ] Vocabulary test                                                     |
 |   [ S5 ] Isometric portfolio submission (3 different isometric drawings)     |
 |   [ S6 ] Multiview portfolio submission (front/top/side of 3 objects)        |
-|   [ S7 ] Basic CAD task (build shapes from drawings)                                       |
-|   [ S8 ] Keychain CAD kickoff (submit your .STL file)                        |
+|   [ S7 ] Basic CAD task (build shapes from drawings)                         |
+|   [ S8 ] SVG exercise: make your class coin                                  |
 |   [ S9 ] Keychain final submission (STL file + drawings)                     |
 +------------------------------------------------------------------------------+
 | Select code: [00-06], [11-14], [S1-S9]                                       |
@@ -52,9 +52,12 @@
       if (e.key === 'Enter') {
         const cmd = this.value.trim().toUpperCase();
         const routes = {
-          '00':'/', '01':'/year1', '02':'/year2', '03':'/resources', '04':'/calendar', '05':'/about', '06':'/showcase',
-          '11':'/year1/q1', '12':'/year1/q2', '13':'/year1/q3', '14':'/year1/q4',
-          'S1':'/year1/q1/s1','S2':'/year1/q1/s2','S3':'/year1/q1/s3','S4':'/year1/q1/s4','S5':'/year1/q1/s5','S6':'/year1/q1/s6','S7':'/year1/q1/s7','S8':'/year1/q1/s8','S9':'/year1/q1/s9'
+          '00':'/', '01':'/year1', '02':'/year2',
+          '03':'/resources','04':'/calendar','05':'/about','06':'/showcase',
+          '11':'/year1/q1','12':'/year1/q2','13':'/year1/q3','14':'/year1/q4',
+          'S1':'/year1/q1/s1','S2':'/year1/q1/s2','S3':'/year1/q1/s3','S4':'/year1/q1/s4',
+          'S5':'/year1/q1/s5','S6':'/year1/q1/s6','S7':'/year1/q1/s7',
+          'S8':'/year1/q1/s8','S9':'/year1/q1/s9'
         };
         if (routes[cmd]) { window.location.href = routes[cmd]; }
       }
